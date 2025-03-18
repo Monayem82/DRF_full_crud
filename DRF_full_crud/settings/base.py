@@ -1,8 +1,17 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-#j2n)k^gtxxofx89o!$de_qvu4dy^lc*yfj0x#j&g(r1ukg*##'
+
+#Random Secret key
+# from django.core.management.utils import get_random_secret_key
+# secret_key=get_random_secret_key()
+# print(secret_key)
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = True
 
@@ -17,6 +26,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #External apps
+
+
+    #Internal Apps
+    'apps.carList',
+    'apps.api',
+
 ]
 
 MIDDLEWARE = [
