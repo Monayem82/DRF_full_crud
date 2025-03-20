@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stripe</title>
+</head>
+<body>
+    <h1>Stripe Payment</h1>
+    <form action="{% url 'create-session-cheakout' %}" method="post">{% csrf_token %}
+        <button type="submit">pay</button>
+    </form>
+</body>
+</html>

@@ -13,6 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+STRIPE_PUBLIC_KEY =os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY =os.environ.get("STRIPE_SECRET_KEY")
+
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -51,7 +55,7 @@ ROOT_URLCONF = 'DRF_full_crud.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
